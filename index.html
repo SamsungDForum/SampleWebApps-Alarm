@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=1920, height=1080" />
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <meta charset="UTF-8">
+    <title>Alarm</title>
+    <script src="$WEBAPIS/webapis/webapis.js"></script>
+</head>
+
+<body>
+    <header class="main-header">
+        <h1 class="appName">Alarm</h1>
+        <h2 class="appVersion">2.0.0</h2>
+        <div class="tvInfo">
+            <p class="firmware"></p>
+            <p class="model"></p>
+        </div>
+    </header>
+    <section class="main">
+        <div class="info-view">
+            <div class="info-inner-container">
+                <h1>Alarms list:</h1>
+                <ul class="alarms-list" id="list">
+                </ul>
+                <p>Time remaining until next timer</p>
+                <h2 id="time-left"></h2>
+                <div class="alert hidden" id="alert">Success, Alarm called!</div>
+            </div>
+
+            <div class="subbuttons-timer hidden" id="subbuttons">
+                <table id="timer">
+                    <tr class="timer-upper-buttons">
+                        <th>
+                            <button data-list-item class="next-num">+</button>
+                        </th>
+                        <th>
+                            <button data-list-item class="next-type">+</button>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th id="timer-number">10</th>
+                        <th id="timer-type">MIN</th>
+                    </tr>
+                    <tr class="timer-lower-buttons">
+                        <th>
+                            <button data-list-item class="prev-num">-</button>
+                        </th>
+                        <th>
+                            <button data-list-item class="prev-type">-</button>
+                        </th>
+                        <th>
+                            <button data-list-item class="timer-submit" id="timer-submit">Submit</button>
+                        </th>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="subbuttons-alarm hidden" id="subbuttons">
+                <table id="alarm-time">
+                    <tr class="alarm-upper-buttons">
+                        <th></th>
+                        <th>
+                            <button data-list-item class="next-hr">+</button>
+                        </th>
+                        <th>
+                            <button data-list-item class="next-min">+</button>
+                        </th>
+                        <th></th>
+                        <th>
+                            <button data-list-item class="next-day">+</button>
+                        </th>
+                        <th>
+                            <button data-list-item class="next-month">+</button>
+                        </th>
+                        <th>
+                            <button data-list-item class="next-year">+</button>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Time:</th>
+                        <th id="alarm-hr"></th>
+                        <th id="alarm-min"></th>
+                        <th>Date:</th>
+                        <th id="alarm-day"></th>
+                        <th id="alarm-month"></th>
+                        <th id="alarm-year"></th>
+                        <th id="repeat">Repeat every day?</th>
+                    </tr>
+                    <tr class="alarm-lower-buttons">
+                        <th></th>
+                        <th>
+                            <button data-list-item class="prev-hr">-</button>
+                        </th>
+                        <th>
+                            <button data-list-item class="prev-min">-</button>
+                        </th>
+                        <th></th>
+                        <th>
+                            <button data-list-item class="prev-day">-</button>
+                        </th>
+                        <th>
+                            <button data-list-item class="prev-month">-</button>
+                        </th>
+                        <th>
+                            <button data-list-item class="prev-year">-</button>
+                        </th>
+                        <th>
+                            <button data-list-item class="repeat-yes">Yes</button>
+                            <button data-list-item class="repeat-no">No</button>
+                            <button data-list-item class="alarm-submit">Submit</button>
+                        </th>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="subbuttons-system hidden" id="subbuttons">
+                <button data-list-item class="timer">Timer</button>
+                <button data-list-item class="alarm">Alarm</button>
+            </div>
+
+        </div>
+
+    </section>
+    <section class="logs">
+        <h2>Logs:</h2>
+        <div data-list-item class="logsContainer">
+
+        </div>
+    </section>
+    <section class="info">
+        <section class="info-container">
+            <h2>Info</h2>
+            <p>This application demonstrates the use of API for scheduling the system alarm.
+                With this API you can set an alarm or timer, which will start at specified time,
+                open application and perform an action.</p>
+
+        </section>
+    </section>
+    <section class="buttons" id="buttons">
+        <button data-list-item class="new-alarm">New Alarm</button>
+        <button data-list-item class="edit-alarm">Edit Alarm</button>
+        <button data-list-item class="remove-all">Remove All</button>
+
+        <button data-list-item class="toggle-info">Show/hide info</button>
+    </section>
+
+    <script src="./js/utils.js"></script>
+    <script src="./js/keyhandler.js"></script>
+    <script src="./js/logger.js"></script>
+    <script src="./js/navigation.js"></script>
+    <script src="./js/init.js"></script>
+
+    <script src="./js/alarmControl.js"></script>
+    <script src="./js/timerControl.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
